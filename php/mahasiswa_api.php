@@ -41,7 +41,6 @@ switch ($method) {
         $mahasiswa->nama = $_POST['nama'];
         $mahasiswa->jk = $_POST['jk'];
         $mahasiswa->prodi = $_POST['prodi'];
-        //$mahasiswa->password = $_POST['password'];
         $mahasiswa->insert();
         
         $a = $db->affected_rows();

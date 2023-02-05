@@ -9,7 +9,6 @@ class Mahasiswa
     public $nama = "";
     public $jk = "";
     public $prodi = "";
-    public $password = "";
 
     public function __construct(MySQLDatabase $db)
     {
@@ -39,8 +38,7 @@ class Mahasiswa
 
     public function insert(): int
     {
-        $pwd = MD5($this->password);
-        $query = "INSERT INTO $this->table (`nim`, `nama`, `jk`, `prodi`, `password`) VALUES ('$this->nim', '$this->nama', '$this->jk', '$this->prodi', '$pwd')";
+        $query = "INSERT INTO $this->table (`nim`, `nama`, `jk`, `prodi`) VALUES ('$this->nim', '$this->nama', '$this->jk', '$this->prodi')";
         $this->db->query($query);
         return $this->db->insert_id();
     }
